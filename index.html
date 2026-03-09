@@ -390,50 +390,35 @@
     .focus-desc { font-size: 0.68rem; line-height: 1.8; color: var(--text-muted); }
 
     /* Links */
-    .links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .links-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
 
-    .link-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 1.5rem 2rem;
+    .link-item {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 0.7rem;
       text-decoration: none;
-      color: var(--text);
-      border-radius: 3px;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .link-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px var(--accent-soft);
-    }
-
-    .link-card-left { display: flex; align-items: center; gap: 1.2rem; }
-
-    .link-platform {
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .link-handle {
-      font-family: 'Fraunces', serif;
-      font-size: 1rem;
-      font-weight: 300;
       color: var(--text-muted);
-      display: block;
-      margin-top: 0.1rem;
+      transition: color 0.3s;
+      padding: 0.5rem 0;
     }
+    .link-item:hover { color: var(--accent); }
 
-    .link-arrow {
-      color: var(--text-dim);
-      font-size: 1rem;
-      transition: color 0.2s, transform 0.2s;
+    .link-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
     }
-    .link-card:hover .link-arrow { color: var(--accent); transform: translateX(4px); }
+    .link-icon svg { width: 100%; height: 100%; fill: currentColor; }
+
+    .link-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+    }
 
     footer {
       border-top: 1px solid var(--border);
@@ -461,7 +446,7 @@
       .hero-right { padding-top: 0; align-items: center; }
       .stats { grid-template-columns: repeat(2, 1fr); margin: 0 1.5rem; gap: 1rem; }
       .focus-grid { grid-template-columns: 1fr; }
-      .links-grid { grid-template-columns: 1fr; }
+      .links-grid { gap: 1.5rem; }
       .section { padding: 3rem 1.5rem; }
       footer { padding: 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
     }
@@ -537,7 +522,6 @@
 
   <section class="section" id="content">
     <div class="section-header">
-      <span class="section-num">01</span>
       <h2 class="section-title">What I Cover</h2>
       <div class="section-line"></div>
     </div>
@@ -561,35 +545,30 @@
   </section>
 
   <section class="section" id="links">
-    <div class="section-header">
-      <span class="section-num">02</span>
-      <h2 class="section-title">Find Me Online</h2>
-      <div class="section-line"></div>
-    </div>
     <div class="links-grid">
-      <a href="https://youtube.com/@MunahilMurrieum" class="link-card" target="_blank">
-        <div class="link-card-left"><div><div class="link-platform">YouTube</div><span class="link-handle">@MunahilMurrieum</span></div></div>
-        <span class="link-arrow">→</span>
+      <a href="https://youtube.com/@MunahilMurrieum" class="link-item" target="_blank">
+        <span class="link-icon"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></span>
+        <span class="link-label">YouTube</span>
       </a>
-      <a href="https://linkedin.com/in/munahil" class="link-card" target="_blank">
-        <div class="link-card-left"><div><div class="link-platform">LinkedIn</div><span class="link-handle">linkedin.com/in/munahil</span></div></div>
-        <span class="link-arrow">→</span>
+      <a href="https://linkedin.com/in/munahil" class="link-item" target="_blank">
+        <span class="link-icon"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></span>
+        <span class="link-label">LinkedIn</span>
       </a>
-      <a href="https://github.com/munahil" class="link-card" target="_blank">
-        <div class="link-card-left"><div><div class="link-platform">GitHub</div><span class="link-handle">github.com/munahil</span></div></div>
-        <span class="link-arrow">→</span>
+      <a href="https://github.com/munahil" class="link-item" target="_blank">
+        <span class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18a4.65 4.65 0 0 1 1.24 3.22c0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg></span>
+        <span class="link-label">GitHub</span>
       </a>
-      <a href="https://instagram.com/munahilmurrieum" class="link-card" target="_blank">
-        <div class="link-card-left"><div><div class="link-platform">Instagram</div><span class="link-handle">@munahilmurrieum</span></div></div>
-        <span class="link-arrow">→</span>
+      <a href="https://instagram.com/munahilmurrieum" class="link-item" target="_blank">
+        <span class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23a3.72 3.72 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.17-.42-.37-1.06-.42-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.37 2.23-.42C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.47 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></span>
+        <span class="link-label">Instagram</span>
       </a>
-      <a href="https://medium.com/@munahil" class="link-card" target="_blank">
-        <div class="link-card-left"><div><div class="link-platform">Medium</div><span class="link-handle">medium.com/@munahil</span></div></div>
-        <span class="link-arrow">→</span>
+      <a href="https://medium.com/@munahil" class="link-item" target="_blank">
+        <span class="link-icon"><svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></span>
+        <span class="link-label">Medium</span>
       </a>
-      <a href="https://refiney.io" class="link-card" target="_blank">
-        <div class="link-card-left"><div><div class="link-platform">Business</div><span class="link-handle">refiney.io</span></div></div>
-        <span class="link-arrow">→</span>
+      <a href="https://refiney.io" class="link-item" target="_blank">
+        <span class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="link-label">Refiney</span>
       </a>
     </div>
   </section>
