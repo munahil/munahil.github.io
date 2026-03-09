@@ -20,7 +20,7 @@
       --text-dim: #b0a89e;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; font-size: 17px; }
 
     body {
       background: var(--bg);
@@ -72,6 +72,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       padding: 0 3rem;
+      padding-bottom: 3rem;
       gap: 4rem;
     }
 
@@ -170,7 +171,7 @@
       animation: fadeUp 1s ease 0.5s forwards;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
       align-items: flex-end;
       justify-content: flex-start;
     }
@@ -234,8 +235,8 @@
       border: 1px solid var(--border);
       border-radius: 6px;
       overflow: hidden;
-      width: 420px;
-      max-width: 420px;
+      width: 480px;
+      max-width: 480px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
 
@@ -261,9 +262,9 @@
     }
 
     .terminal-body {
-      padding: 1.5rem 2rem;
+      padding: 1.6rem 2.2rem;
       font-size: 0.85rem;
-      line-height: 2.1;
+      line-height: 2.2;
     }
 
     .t-line { display: flex; gap: 0.8rem; }
@@ -289,39 +290,43 @@
 
     /* Stats */
     .stats {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
       margin: 0 3rem;
-      background: var(--surface);
       opacity: 0;
       animation: fadeUp 1s ease 0.8s forwards;
     }
 
     .stat {
-      padding: 2.5rem 2rem;
-      border-right: 1px solid var(--border);
-      transition: background 0.3s;
+      padding: 2.2rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: background 0.3s, box-shadow 0.3s;
+      text-align: center;
     }
-    .stat:last-child { border-right: none; }
-    .stat:hover { background: var(--surface2); }
+    .stat:hover {
+      background: var(--surface2);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
 
     .stat-num {
       font-family: 'Fraunces', serif;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 300;
       color: var(--text);
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
     .stat-num span { color: var(--accent); }
 
     .stat-label {
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* Sections */
@@ -454,7 +459,7 @@
       .nav-links { display: none; }
       .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 2.5rem; min-height: auto; }
       .hero-right { padding-top: 0; align-items: center; }
-      .stats { grid-template-columns: repeat(2, 1fr); margin: 0 1.5rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); margin: 0 1.5rem; gap: 1rem; }
       .focus-grid { grid-template-columns: 1fr; }
       .links-grid { grid-template-columns: 1fr; }
       .section { padding: 3rem 1.5rem; }
